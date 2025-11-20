@@ -14,10 +14,11 @@ int leerVotos(int votos[][3]) {
 
     printf("Ingresar 3 números del 0 al 9 por oyente. Usar -1 para terminar.\n");
 
-    while (n < MAX_OYENTES) {
+    while (n < MAX_OYENTES) 
+    {
         printf("Oyente %d: ", n);
         scanf("%d", &c1);
-
+        
         if (c1 == -1) {
             break;
         }
@@ -34,7 +35,7 @@ int leerVotos(int votos[][3]) {
     return n;
 }
 
-// Función 2: Calculando puntos por canción
+// Función 2: Calculado puntos por canción
 void calcularPuntosCanciones(int votos[][3], int n, int puntos[]) {
 
     int i;
@@ -48,7 +49,7 @@ void calcularPuntosCanciones(int votos[][3], int n, int puntos[]) {
     }
 }
 
-// Función 3A: Obtener la canción más votada
+// Función 3A: Obteniendo la canción más votada
 int obtenerPrimera(int puntos[]) {
     int i, mayor = 0;
 
@@ -61,7 +62,7 @@ int obtenerPrimera(int puntos[]) {
     return mayor;
 }
 
-// Función 3B: Obtener la segunda canción más votada (diferente a la primera)
+// Función 3B: Obtener la segunda canción más votada que sea diferente a la primera
 int obtenerSegunda(int puntos[], int primera) {
     int i, segunda = -1;
 
@@ -78,11 +79,10 @@ int obtenerSegunda(int puntos[], int primera) {
     return segunda;
 }
 
-// Función 4: Calcular puntos de cada oyente
+// Función 4: Calculando puntos de cada oyente
 void calcularPuntosOyentes(int votos[][3], int n, int primera, int segunda, int puntosOyente[]) {
-
+  
     int i;
-
     for (i = 0; i < n; i++) {
 
         int tiene1 = 0;
@@ -90,7 +90,6 @@ void calcularPuntosOyentes(int votos[][3], int n, int primera, int segunda, int 
 
         if (votos[i][0] == primera || votos[i][1] == primera || votos[i][2] == primera)
             tiene1 = 1;
-
         if (votos[i][0] == segunda || votos[i][1] == segunda || votos[i][2] == segunda)
             tiene2 = 1;
 
@@ -102,7 +101,7 @@ void calcularPuntosOyentes(int votos[][3], int n, int primera, int segunda, int 
     }
 }
 
-// Función 5: Obtener ganador
+// Función 5: Obteniendo ganador
 int obtenerGanador(int puntosOyente[], int n) {
 
     int g = 0;
@@ -117,12 +116,13 @@ int obtenerGanador(int puntosOyente[], int n) {
     return g;
 }
 
-// Función 6: Mostrar resultados
-void mostrarResultados(int puntosCancion[], int primera, int segunda, int puntosOyente[], int n, int ganador) {
+// Función 6: Mostrando resultados
+void mostrarResultados(int puntosCancion[], int primera, int segunda, int puntosOyente[], int n, int ganador) 
+{
 
     int i;
 
-    printf("\nPuntos por canción:\n");
+    printf("\nPuntos por canción:\n");   //corregir saltos de línea
     for (i = 0; i < MAX_CANCIONES; i++)
         printf("Cancion %d: %d puntos\n", i, puntosCancion[i]);
 
