@@ -12,7 +12,7 @@ int leerVotos(int votos[][3]) {
     int c1, c2, c3;
     int n = 0;
 
-    printf("Selecciona 3 caciones con números del 0 al 9. Usar -1 para terminar.\n");
+    printf("Ingresar 3 números del 0 al 9 por oyente. Usar -1 para terminar.\n");
 
     while (n < MAX_OYENTES) {
         printf("Oyente %d: ", n);
