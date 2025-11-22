@@ -10,20 +10,20 @@ Proyecto final */
 // Función 1: Leyendo votos y ver cuántos oyentes participaron
 int leerVotos(int votos[][3]) {
     int c1, c2, c3;
-    int n = 0;
+     int n = 0;
 
     printf("Ingresar 3 números del 0 al 9 por oyente. Usar -1 para terminar.\n");
 
     while (n < MAX_OYENTES) 
     {
         printf("Oyente %d: ", n);
-        scanf("%d", &c1);
+         scanf("%d", &c1);
         
         if (c1 == -1) {
-            break;
+             break;
         }
 
-        scanf("%d %d", &c2, &c3);
+         scanf("%d %d", &c2, &c3);
 
         votos[n][0] = c1;
         votos[n][1] = c2;
@@ -55,7 +55,7 @@ int obtenerPrimera(int puntos[]) {
 
     for (i = 1; i < MAX_CANCIONES; i++) {
         if (puntos[i] > puntos[mayor]) {
-            mayor = i;
+         mayor = i;
         }
     }
 
@@ -67,7 +67,6 @@ int obtenerSegunda(int puntos[], int primera) {
     int i, segunda = -1;
 
     for (i = 0; i < MAX_CANCIONES; i++) {
-
         if (i == primera)
             continue;
 
@@ -85,14 +84,14 @@ void calcularPuntosOyentes(int votos[][3], int n, int primera, int segunda, int 
     int i;
     for (i = 0; i < n; i++) {
 
-        int tiene1 = 0;
+         int tiene1 = 0;
         int tiene2 = 0;
 
         if (votos[i][0] == primera || votos[i][1] == primera || votos[i][2] == primera)
             tiene1 = 1;
+        
         if (votos[i][0] == segunda || votos[i][1] == segunda || votos[i][2] == segunda)
             tiene2 = 1;
-
         puntosOyente[i] = 0;
 
         if (tiene1) puntosOyente[i] += 30;
